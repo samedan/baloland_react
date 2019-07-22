@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import ContactContext from './contactContext';
 import contactReducer from './contactReducer';
 import axios from 'axios';
+import serverApi from '../../utils/serverApi';
 import {
   ADD_CONTACT,
   DELETE_CONTACT,
@@ -28,7 +29,7 @@ const ContactState = props => {
   // Get Contacts
   const getContacts = async () => {
     try {
-      const res = await axios.get('/api/contacts');
+      const res = await axios.get(`${serverApi}/api/contacts`);
       dispatch({ type: GET_CONTACTS, payload: res.data });
     } catch (err) {
       dispatch({
@@ -47,7 +48,11 @@ const ContactState = props => {
       }
     };
     try {
-      const res = await axios.post('/api/contacts', contact, config);
+      const res = await axios.post(
+        `${serverApi}/api/contacts`,
+        contact,
+        config
+      );
       dispatch({ type: ADD_CONTACT, payload: res.data });
     } catch (err) {
       dispatch({
@@ -60,7 +65,7 @@ const ContactState = props => {
   // Delete Contact
   const deleteContact = async id => {
     try {
-      await axios.delete(`/api/contacts/${id}`);
+      await axios.delete(`${serverApi}/api/contacts/${id}`);
       dispatch({ type: DELETE_CONTACT, payload: id });
     } catch (err) {
       dispatch({
@@ -79,7 +84,7 @@ const ContactState = props => {
     };
     try {
       const res = await axios.put(
-        `/api/contacts/${contact._id}`,
+        `${serverApi}/api/contacts/${contact._id}`,
         contact,
         config
       );
