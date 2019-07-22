@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://samedan2019:jGyHZWqP87DG2JCN@cluster0-d8290.mongodb.net/test?retrWrites=true&w=majority",
+  "jwtSecret": "secret"
+}
