@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "keeperevolved",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,5 +32,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://glacial-cliffs-20246.herokuapp.com"
+  "proxy": "https://glacial-cliffs-20246.herokuapp.com",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }
